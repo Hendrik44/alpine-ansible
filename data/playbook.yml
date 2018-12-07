@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  connection: local
+  
+  tasks:
+  - name: print out the hostname of target
+    command: hostname

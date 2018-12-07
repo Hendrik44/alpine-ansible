@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  ansible:
+    image: alpine-ansible:3.8-2.7.4
+    command: ansible-playbook playbook.yml
+    read_only: true
+    tmpfs:
+      - /run
+      - /tmp
+    # command: ls -lsa
+    volumes:
+      - ./data:/home/myuser
+    cap_drop:
+      - NET_ADMIN
+      - SYS_ADMIN
